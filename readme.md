@@ -1,18 +1,17 @@
-First, I defined a variable that is an array to list people in, then I defined its type above.
-I added a new person using the following function.
-const newPerson = function(person:personlisttype){
-    personlist.push(person)
-}
-I updated Lecite using the following function.
-const updetePerson = (id:personlisttype["id"] , person:personlisttype) => {
-    const personIndex:number = personlist.findIndex((item) => item.id === id) 
-    personlist[personIndex] = {...personlist[personIndex] , ...person};
-}
-I used the following function to delete
-//delete
-const deletePerson = (id:personlisttype["id"] ) => {
-    const personIndex:number = personlist.findIndex((item) => item.id === id);
-    return personlist.splice(personIndex , 1)
-}
-I used the following command to sort by name
-personlist.sort((a, b) => a.name.localeCompare(b.name));
+برای انجام این تمرین به دوتا اینپوت و یک دکمه نیاز داریم با  استفاده از دستور زیر  از جاوا اسکریپت   درخواست می کنیم تا اینپوت ها را به  ما بدهد تا بتوانیم مقدارش را با زدن بر روی دکمه شا تسک در صفحه نشان دهد 
+const taskTitle = document.querySelector<HTMLInputElement>("#taskTitle");
+const taskDeccription = document.querySelector<HTMLInputElement>("#taskdescription");
+const button = document.querySelector<HTMLButtonElement>("#showtask");
+const listTask = document.querySelector<HTMLButtonElement>("#listTask");
+
+ دستور زیر بیانگر این است که وقتی بر روی دکمه کلیک شد مقدار ورودی ها را در صفحه نشان دهد
+ button?.addEventListener("click" , () =>{
+    const showTask =document.createElement("div");
+    const titr =document.createElement("h1");
+    titr.innerText=taskTitle?.value ?? "";
+    const titrDescription =document.createElement("h3");
+    titrDescription.innerText=taskDeccription?.value ?? "";
+    showTask.appendChild(titr);
+    showTask.appendChild(titrDescription);
+    listTask?.appendChild(showTask)
+})

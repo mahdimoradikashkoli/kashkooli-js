@@ -7,5 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "mahdi moradi",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "flowbite": "^1.8.1"
+  }
 }
