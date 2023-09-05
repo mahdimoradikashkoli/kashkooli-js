@@ -4,11 +4,15 @@
   "description": "practice 7",
   "main": "index.js",
   "scripts": {
+    "tailwind": "npx tailwindcss -i ./index.css -o ./dist/output.css --watch ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "mahdi moradi",
   "license": "ISC",
   "dependencies": {
     "flowbite": "^1.8.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
   }
 }

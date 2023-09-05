@@ -1,0 +1,11 @@
+export const contactNameText = document.querySelector("#contactName");
+export const phoneNumberInput = document.querySelector("#phoneNumber");
+export const simStorageInput = document.querySelector("#simStorage");
+export const deviceStorageInput = document.querySelector("#deviceStorage");
+export const submitButton = document.querySelector("#submitButton");
+export const showContactList = document.querySelector("#showcontactslist");
+export const contactsListDrawer = document.querySelector("#contactsListDrawer");
+export const contactsListElement = document.querySelector("#contactsList");
+export const clearDrawerButton = document.querySelector("#clearDrawer");
+export const contactsList = [];
+//# sourceMappingURL=importer.js.map
