@@ -7,3 +7,7 @@ export type contactprops = {
 };
 
 export type contactsListType = contactprops[];
+export type contactInfoType={
+    contactName:string;
+    phoneNumber:string | number;
+}

@@ -1,4 +1,4 @@
-import {contactsListType , contactprops} from "./types";
+import {contactsListType , contactprops, contactInfoType} from "./types";
 import {
     contactsListDrawer,
     contactNameText ,
@@ -8,7 +8,7 @@ import {
     contactsListElement ,
     contactsList
 } from "./importer.js";
-
+import {createListItem, validateFialds} from "./functions.js"
 export const showContactListHandler =  () => {
     contactsListDrawer?.classList.remove("hidden");
     contactsListDrawer?.classList.add("")
@@ -16,7 +16,21 @@ export const showContactListHandler =  () => {
 export const clearDrawerButtonHandler = () => {
     contactsListDrawer?.classList.add("hidden");
 }
+
+const validateCreateContact = (contactInfo:contactInfoType) => {
+    
+    if (!validateFialds(contactInfo.contactName, contactInfo.phoneNumber + "")){
+        alert("fill all fialds");
+        throw Error("fill all fialds")  
+    }
+   
+}
+
 export const handelCraeteContact =  () => {
+    validateCreateContact({
+        contactName:contactNameText!.value,
+        phoneNumber:phoneNumberInput!.value
+    })
     const newContac:contactprops = {
         id:crypto.randomUUID(),
         contactname:contactNameText?.value?? "",
@@ -24,18 +38,13 @@ export const handelCraeteContact =  () => {
         storage:deviceStorageInput?.checked ? "Device" : "Sim",
         avatar:null,
     };
-    contactsList.push(newContac);
-    const listItem = document.createElement("li");
-    listItem.className="py-2 px-1 bg-slate-300 rounded-lg mt-2";
-    const contactNameElement = document.createElement("h1");
-    contactNameElement.className="text-slate-700";
-    contactNameElement.innerText=newContac.contactname;
-    const contactPhoneNumberElement = document.createElement("p");
-    contactPhoneNumberElement.className="text-slate-500";
-    contactPhoneNumberElement.innerText = newContac.phonenumber.toString();
 
-    listItem.appendChild(contactNameElement );
-    listItem.appendChild(contactPhoneNumberElement);
+    contactsList.push(newContac);
+    const listItem = createListItem({
+        contactName:newContac.contactname,
+        phoneNumber:newContac.phonenumber,
+    });
+
     contactsListElement?.appendChild(listItem);
  }
 

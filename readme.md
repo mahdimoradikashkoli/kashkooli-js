@@ -1,17 +1,12 @@
-برای انجام این تمرین به دوتا اینپوت و یک دکمه نیاز داریم با  استفاده از دستور زیر  از جاوا اسکریپت   درخواست می کنیم تا اینپوت ها را به  ما بدهد تا بتوانیم مقدارش را با زدن بر روی دکمه شا تسک در صفحه نشان دهد 
-const taskTitle = document.querySelector<HTMLInputElement>("#taskTitle");
-const taskDeccription = document.querySelector<HTMLInputElement>("#taskdescription");
-const button = document.querySelector<HTMLButtonElement>("#showtask");
-const listTask = document.querySelector<HTMLButtonElement>("#listTask");
+Here we created a separate function file to put the functions in this folder.
+We use the following function to give us an error if no data is entered in the input:
+const validateCreateContact = (contactInfo:contactInfoType) => {
+    
+    if (!validateFialds(contactInfo.contactName, contactInfo.phoneNumber + "")){
+        alert("fill all fialds");
+        throw Error("fill all fialds")  
+    }
+   
+}
 
- دستور زیر بیانگر این است که وقتی بر روی دکمه کلیک شد مقدار ورودی ها را در صفحه نشان دهد
- button?.addEventListener("click" , () =>{
-    const showTask =document.createElement("div");
-    const titr =document.createElement("h1");
-    titr.innerText=taskTitle?.value ?? "";
-    const titrDescription =document.createElement("h3");
-    titrDescription.innerText=taskDeccription?.value ?? "";
-    showTask.appendChild(titr);
-    showTask.appendChild(titrDescription);
-    listTask?.appendChild(showTask)
-})
+In this exercise, we focused on not giving an error to the user if a data is not entered in the input, and we also created a function file in the SAC to place the functions there and one function does not have multiple tasks.
