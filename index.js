@@ -1,23 +1,3 @@
-function sum(firstNumber , operator , secoundNumber) {
-    if (!isNaN(firstNumber + secoundNumber)){
-        switch (operator) {
-            case '+' :
-                return (firstNumber + secoundNumber)
-            case '-' :
-                return (firstNumber - secoundNumber)
-            case '*' :
-                return (firstNumber * secoundNumber)
-            case '/' :
-                return (firstNumber / secoundNumber)
-        }
-    }
-    return "someting wrong"
-}
-const firstNumber = +prompt("enter firstnumber")
-const operator = prompt("enter operator")
-const secoundNumber = +prompt("enter secoundNumber")
-document.write (sum(firstNumber , operator , secoundNumber) )
-
 function avarage(a, b, c, d, e) {
     const sum = a + b + c + d + e;
     const avg = sum / 5;
@@ -26,4 +6,9 @@ function avarage(a, b, c, d, e) {
     } 
     return avg;
  }
- console.log(avarage(10, 10, 8, 11, 12))
+ let firstNumber =+prompt("enter firstNumber")
+ let secoundNumber =+prompt("enter secoundNumber")
+ let thirdNumber =+prompt("enter thirdNumber")
+ let fourthNumber=+prompt("enter fourthNumber")
+ let fifthNumber =+prompt("enter fifthNumber")
+ console.log(avarage(firstNumber, secoundNumber, thirdNumber, fourthNumber, fifthNumber))

@@ -1,1 +1,1 @@
-tt
+Here we take five numbers from the user and calculate the average if it shows less than 12 messages.
