@@ -1,11 +1,3 @@
-// let firstNumber= +prompt("enter your number")
-// let operator= prompt("enter operator")
-// let secoundNumber= +prompt("enter secound number")
-// if(operator === "+"){
-//     console.log(firstNumber + secoundNumber);
-//     document.write(firstNumber + secoundNumber)
-// }
-
 function celsius_to_fahrenheit(c){
     return 9/5 * c + 32
 }
